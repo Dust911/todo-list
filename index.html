@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>TODO List</title>
+</head>
+<body>
+  
+  <header>
+    <div class="header__logo">
+    <h1 style="font-weight: 900; color: #FFFFFF;">TODO LIST</h1>
+    <h3 style="color: #FFFFFF;">BY DASTAN IBRAIMOV</h3>
+    </div>
+
+    <input id="header__button" type="button" value="Создать новую задачу">
+  </header>
+
+  <main>
+    <div id="mainTitle">
+    <h2 style="color: #FFFFFF;">СПИСОК ЗАДАЧ</h2>
+    </div>
+    <article>
+      <ul class="notesTable">
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+        <li class="noteUnit">
+          <div class="noteTitle">Заголовок задачи</div>
+          <div class="noteDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, at?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, sunt.</div>
+        </li>
+      </ul>
+    </article>
+  </main>
+
+
+  <div class="modalBackground">
+    <div class="btn__overlay">
+      <div id="btn__title">
+      <h1 class="overlay__title">Создать задачу</h1>
+      <span class="btn__modal_close">&times;</span>
+      </div>
+      <div class="overlay__btns">
+      <input type="text" class="input__task" placeholder="   Заголовок задачи">
+      <textarea class="content__task" cols="30" rows="6" placeholder="   описание"></textarea>
+      <button class="btn__save">Сохранить</button>
+      <button class="btn__cancel">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
