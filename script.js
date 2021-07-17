@@ -27,11 +27,17 @@ createNoteBtn.onclick = function() {
   modalWindow.style.display = "none";
 }
 
+// функция проверяет инпуты на наличие текста, и если есть - выдаёт алерт с подтверждением при закрытии модалки
 window.onclick = function(event) {
-  if (event.target == modalWindow & !descInput.value == '') {
-    confirm(exitConfirm);
+  if (event.target == modalWindow & descInput.value == '') {
     modalWindow.style.display = "none";
     console.log("working clean");
+    descInput.value = '';
+    titleInput.value = '';
+  } else if (!descInput.value == '') {
+    confirm(exitConfirm);
+    console.log("description was empty");
+    modalWindow.style.display = "none";
     descInput.value = '';
     titleInput.value = '';
   }
