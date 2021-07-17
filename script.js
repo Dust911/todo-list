@@ -9,6 +9,8 @@ const notesTable = document.querySelector(".notesTable");
 const titleInput = document.querySelector(".input__task");
 const descInput = document.querySelector(".content__task");
 
+let exitConfirm = ("Вы точно хотите закрыть окно написания?");
+
 getModalBtn.onclick = function() {
   modalWindow.style.display = "block";
 }
@@ -26,8 +28,12 @@ createNoteBtn.onclick = function() {
 }
 
 window.onclick = function(event) {
-  if (event.target == modalWindow) {
+  if (event.target == modalWindow & !descInput.value == '') {
+    confirm(exitConfirm);
     modalWindow.style.display = "none";
+    console.log("working clean");
+    descInput.value = '';
+    titleInput.value = '';
   }
 }
 
@@ -48,9 +54,17 @@ const createElement = (tag, className, innerTxt) => {
 }
 
 const prependElement = () => {
+  
   const newNote = createElement("li", "noteUnit");
   const noteTitle = createElement("div", "noteTitle", titleInput.value);
   const noteText = createElement("div", "noteDesc", descInput.value);
+
+  if(titleInput.value === '') {
+    alert("Вы не ввели заголовок!");
+    modalWindow.style.display = "block";
+    return;
+}
+
   newNote.append(noteTitle, noteText);
   notesTable.prepend(newNote);
 
