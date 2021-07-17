@@ -34,7 +34,7 @@ window.onclick = function(event) {
     console.log("working clean");
     descInput.value = '';
     titleInput.value = '';
-  } else if (!descInput.value == '') {
+  } else if (event.target == modalWindow & !descInput.value == '') {
     confirm(exitConfirm);
     console.log("description was empty");
     modalWindow.style.display = "none";
