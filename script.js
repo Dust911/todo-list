@@ -9,6 +9,18 @@ const notesTable = document.querySelector(".notesTable");
 const titleInput = document.querySelector(".input__task");
 const descInput = document.querySelector(".content__task");
 
+var chbox = document.querySelector(".checkmark");
+var trashIcn = document.querySelector(".trashbin__icon");
+
+let noteTable = document.querySelectorAll(".notesTable ul");
+for (var i = 0, len = noteTable.length; i < len; i++) {
+  noteTable[i].onclick = function() {
+    console.log('parentNode', this.parentNode);
+    console.log('element => this', this);
+    this.parentNode.removeChild(this);
+  }
+}
+
 let exitConfirm = ("Вы точно хотите закрыть окно написания?");
 
 getModalBtn.onclick = function() {
@@ -25,6 +37,13 @@ closeModalCross.onclick = function() {
 
 createNoteBtn.onclick = function() {
   modalWindow.style.display = "none";
+  if (titleInput.value == '') {
+    chbox.style.display = "none";
+    trashIcn.style.display = "none";
+  // } else {
+  //   chbox.style.display = "block";
+  //   trashIcn.style.display = "block";
+  }
 }
 
 // функция проверяет инпуты на наличие текста, и если есть - выдаёт алерт с подтверждением при закрытии модалки
@@ -64,6 +83,12 @@ const prependElement = () => {
   const newNote = createElement("li", "noteUnit");
   const noteTitle = createElement("div", "noteTitle", titleInput.value);
   const noteText = createElement("div", "noteDesc", descInput.value);
+  const infoNote = createElement("span", "noteInfo");
+  const checkmarkSpan = createElement("span", "checkmarkSpan");
+  const checkmark = chbox;
+  const checkmarkLabel = createElement("label", "checkmark__label");
+  const emptySpan = createElement("span", "emptySpace");
+  const trashbinIcon = trashIcn;
 
   if(titleInput.value === '') {
     alert("Вы не ввели заголовок!");
@@ -71,11 +96,19 @@ const prependElement = () => {
     return;
 }
 
-  newNote.append(noteTitle, noteText);
+  newNote.append(infoNote, checkmarkSpan, emptySpan, trashbinIcon);
+  infoNote.append(noteTitle, noteText);
+  checkmarkSpan.append(checkmark, checkmarkLabel);
+
+
   notesTable.prepend(newNote);
 
   // Очищает поля ввода
   titleInput.value = ''; 
   descInput.value = '';
+
+  chbox.style.display = "block";
+  trashIcn.style.display = "block";
 }
 createNoteBtn.addEventListener("click", prependElement);
+
