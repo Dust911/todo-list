@@ -194,6 +194,9 @@ ul {
 }
 
 .noteUnit {
+  display: grid;
+  grid-template-columns: 93% 7%;
+  grid-template-rows: 83% 17%;
   font-size: 18px;
   align-self: center;
   justify-self: center;
@@ -216,4 +219,18 @@ ul {
   padding-top: 8px;
   word-wrap: break-word;
   width: 420px;
+}
+
+.checkmark {
+  transform: scale(1.7);
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.trashbin__icon {
+  cursor: pointer;
+}
+
+.checkmark:checked + .checkmark__label {
+  text-decoration: line-through;
 }
